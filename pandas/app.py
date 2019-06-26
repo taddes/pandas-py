@@ -130,3 +130,21 @@ print(df.head())
 header("9. df['avg_day'] = (df.avg_low + df.avg_high) / 2 ")
 df['avg_day'] = (df.avg_low + df.avg_high) / 2
 print(df.head())
+
+# 10. renaming columns
+header("10. df.rename(columns = {'avg_precipitation':'avg_rain'}, inplace=True)")
+df.rename(columns = {'avg_precipitation':'avg_rain'}, inplace=True)		# rename 1 column
+# OR # df = df.rename(columns = {'avg_precipitation':'avg_rain'})
+print(df.head())
+
+header("10. df.columns = ['month','av_hi','av_lo','rec_hi','rec_lo','av_rain','av_day']")
+df.columns = ['month','av_hi','av_lo','rec_hi','rec_lo','av_rain','av_day']
+print(df.head())
+
+# 11. iterate a df
+header("11. iterate rows of df with a for loop")
+for index, row in df.iterrows():
+    print (index, row["month"], row["avg_high"])
+
+# 12. write to csv file
+# df.to_csv('foo.csv')
